@@ -7,7 +7,7 @@ html {
 	background-color: white;
 }
 body {
-	font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;
     width: 99%;                     /* changed from 800 pixels */
     max-width: 960px;
@@ -46,10 +46,13 @@ header img {
 	margin: 0;
 	padding: 0;
 	position: relative;
+	display: flex; /* change to flex */
+        justify-content: space-between; /* space allocated evenly between flex items */
+        flex-basis: 100%; /* flex container occupies 100% of the page width */
 }
 #nav_menu ul li {
 	float: left;
-    width: 20%;                 /* 160 / 800 x 100 */
+        width: 20%;                 /* 160 / 800 x 100 */
 }
 #nav_menu ul li a {
     display: block;
@@ -64,7 +67,7 @@ header img {
 	color: yellow;
 }
 #nav_menu ul ul {
-	width: 100%;
+    width: 100%;
     display: none;
     position: absolute;
     top: 100%;
@@ -83,6 +86,7 @@ header img {
 /* the styles for the main content */
 main {
 	clear: left;
+	 display: flex; /* change to flex */
 }
 
 /* the styles for the section */
@@ -90,6 +94,8 @@ section {
 	width: 65.625%;                  /* 525 / 800 X 100 */
 	float: right;
 	padding: 0 2.5% 20px 2.5%;       /* 20 / 800 x 100 */
+	flex-basis: 70%; /* set flex-basis to 70% */
+	order: 2; /* set order to display after aside element */
 }
 section h1 {
 	font-size: 150%;
@@ -102,7 +108,7 @@ section h2 {
 	padding: .5em 0 .25em 0;
 }
 section p {
-	padding-bottom: .5em;
+	padding-bottom: 0.5em;
 }
 section blockquote {
 	padding: 0 2em;
@@ -113,7 +119,7 @@ section ul {
 	list-style-type: circle;
 }
 section li {
-	padding-bottom: .35em;
+	padding-bottom: 0.35em;
 }
 
 /* the styles for the article */
@@ -127,7 +133,7 @@ article h2 {
 }
 article h3 {
 	font-size: 105%;
-	padding-bottom: .25em;
+	padding-bottom: 0.25em;
 }
 article img {
 	float: right;
@@ -139,19 +145,21 @@ article img {
 
 /* the styles for the aside */
 aside {
+	flex-basis: 30%; /* set flex-basis to 30% */
 	width: 26.875%;                     /* 215 / 800 x 100 */
 	float: right;
 	padding: 0 0 20px 2.5%;             /* 20 / 800 x 100 */
+	order: 1; /* set order to display before section element */
 }
 aside h2 {
 	color: #800000;
 	font-size: 130%;
-	padding: .5em 0 .25em 0;
+	padding: .5em 0 0.25em 0;
 }
 
 aside h3 {
 	font-size: 105%;
-	padding-bottom: .25em;
+	padding-bottom: 0.25em;
 }
 aside img {
 	padding-bottom: 1em;
